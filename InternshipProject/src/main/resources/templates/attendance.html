@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Attendance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #93c5fd);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #1e293b;
+            margin: 10px 0;
+        }
+
+        span {
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color:red;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+
+        .home-btn {
+            background-color: white;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+            margin-top: 15px;
+        }
+
+        .home-btn:hover {
+            background-color: #e0f2fe;
+        }
+
+        .status-marked {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-unmarked {
+            color: red;
+            font-weight: bold;
+        }
+		
+		footer {
+				           position: absolute;
+				           bottom: 20px;
+				           width: 100%;
+				           text-align: center;
+				          font-size: 0.9rem;
+				       color: #6b7280;
+				   }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Welcome, <span th:text="${student.name}">Student</span></h2>
+        <p>Email: <span th:text="${student.email}"></span></p>
+        <p>Attendance Status: 
+            <span th:if="${student.attendance}" class="status-marked">Marked</span>
+            <span th:if="${!student.attendance}" class="status-unmarked">Not Marked</span>
+        </p>
+
+        <form th:if="${!student.attendance}" action="/attendance" method="post">
+            <button type="submit">Mark Attendance</button>
+        </form>
+
+        <p th:if="${student.attendance}">You have already marked your attendance.</p>
+
+        <form action="/" method="get">
+            <button type="submit" class="home-btn">Back to Home</button>
+        </form>
+		
+		
+    </div>
+	
+	
+	<footer>
+	        © 2025 Shruti More — All rights reserved
+	    </footer>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Attendance System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #374151;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: 600;
+			text-decoration: none; /* Remove underline */
+        }
+
+        .btn-login {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-register {
+            background-color: white;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+        }
+
+        .btn-register:hover {
+            background-color: #eff6ff;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p>Say Goodbye to Paper Registers. Say Hello to Smart Attendance.</p>
+    <div class="btn-group">
+        <a href="#" th:href="@{/login}" class="btn btn-login">Login</a>
+        <a href="#" th:href="@{/register}" class="btn btn-register">Register</a>
+    </div>
+    <footer>
+        © 2025 Shruti More — All rights reserved
+    </footer>
+</body>
+</html>
