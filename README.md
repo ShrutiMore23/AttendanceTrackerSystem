@@ -28,3 +28,11 @@ The **Attendance Tracker System** is a web-based application designed to help ed
 - **Maven**
 - **Spring Tool Suite (STS)** or **IntelliJ IDEA**
 - **XAMPP / MySQL Workbench**
+
+---
+
+## 🧑‍💻 Author
+
+**Shruti More**  
+🌐 [Portfolio](https://shruti-more-portfolio.netlify.app/) • 🐙 [GitHub](https://github.com/ShrutiMore23) • 💼 [LinkedIn](https://linkedin.com/in/shruti-more23)
+
